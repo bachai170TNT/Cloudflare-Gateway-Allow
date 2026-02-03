@@ -29,12 +29,13 @@ def update_list(list_id, remove_items, append_items):
     return response["result"]
 
 @retry(**retry_config)
-def create_rule(rule_name, list_ids):
+def create_rule(rule_name, list_ids, priority=100):
     endpoint = "/rules"
     data = {
         "name": rule_name,
-        "description": "Allow",
+        "description": "Allow Domains",
         "action": "allow",
+        "precedence": priority,
         "traffic": " or ".join(f'any(dns.domains[*] in ${lst})' for lst in list_ids),
         "enabled": True,
     }
@@ -42,17 +43,19 @@ def create_rule(rule_name, list_ids):
     return response["result"]
 
 @retry(**retry_config)
-def update_rule(rule_name, rule_id, list_ids):
+def update_rule(rule_name, rule_id, list_ids, priority=100): # Cần priority ở đây
     endpoint = f"/rules/{rule_id}"
     data = {
         "name": rule_name,
-        "description": "Allow",
+        "description": "Allow Domains",
         "action": "allow",
+        "precedence": priority,
         "traffic": " or ".join(f'any(dns.domains[*] in ${lst})' for lst in list_ids),
         "enabled": True,
     }
     status, response = cloudflare_gateway_request("PUT", endpoint, body=json.dumps(data))
     return response["result"]
+
 
 @retry(**retry_config)
 def get_lists(prefix_name):
