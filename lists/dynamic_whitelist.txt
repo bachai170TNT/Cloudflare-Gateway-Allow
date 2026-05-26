@@ -7,6 +7,7 @@ points.coccoc.com
 cloudflare.com
 cloudflare.net
 cloudflareinsights.com
+edge.microsoft.com
 bitwarden.com
 vault.bitwarden.com
 vault.bitwarden.eu
