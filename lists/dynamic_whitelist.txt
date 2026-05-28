@@ -97,3 +97,4 @@ f-emc.ngsp.gov.vn
 gov.vn
 cache-api-vtvgo.vtvdigital.vn
 antv-config-cdn-vtvgo.vtvdigital.vn
+my.nextdns.io
