@@ -98,3 +98,9 @@ gov.vn
 cache-api-vtvgo.vtvdigital.vn
 antv-config-cdn-vtvgo.vtvdigital.vn
 my.nextdns.io
+facebook.com
+fbcdn.net
+facebook.net
+fbsbx.com
+edge-mqtt.facebook.com
+graph.facebook.com
